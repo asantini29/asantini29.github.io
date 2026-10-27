@@ -6,6 +6,8 @@ permalink: /publications/
 
 # Publications
 
+You can also find the complete list of my publications on [Inspire HEP](https://inspirehep.net/authors/2721396).
+
 <input type="text" class="pub-search" id="pubSearch" placeholder="Filter by title, author, or year...">
 
 <div class="section-card" id="pubList">
