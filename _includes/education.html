@@ -8,7 +8,8 @@
 {% if include.short %}
 <ul style="text-align: left; margin-top: var(--space-4); list-style: none; padding-left: 0;">
 {% for d in degrees %}
-{% capture text %}({{ d.dates }}) {% if d.short %}{{ d.short }}{% else %}{{ d.degree }}, {{ d.institution }}{% endif %}{% endcapture %}
+{% assign short = d.short | strip %}
+{% capture text %}({{ d.dates }}) {% if short != "" %}{{ short }}{% else %}{{ d.degree }}, {{ d.institution }}{% endif %}{% endcapture %}
 <li style="font-size: 0.875rem; color: var(--text-secondary); padding: var(--space-1) 0;">{{ text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>
 {% endfor %}
 </ul>
