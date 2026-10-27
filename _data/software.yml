@@ -20,6 +20,6 @@
   authors: A. Santini 
   website: https://github.com/asantini29/CudAkima
   docs: https://asantini29.github.io/CudAkima/index.html
-  paper: Included in https://journals.aps.org/prd/abstract/10.1103/csx9-9trp.
+  paper: https://journals.aps.org/prd/abstract/10.1103/csx9-9trp
   description: >-
     A tool for parallel Akima splines interpolation on GPUs, implemented in numba/cuda. It is designed to efficiently handle batched interpolation tasks with different input sizes, making it suitable for applications in scientific computing and data analysis.
