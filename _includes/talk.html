@@ -14,12 +14,17 @@
 {% if location != "" %}{% assign parts = parts | push: location %}{% endif %}
 {% if date != "" %}{% assign parts = parts | push: date %}{% endif %}
 {% capture details %}{{ parts | join: ", " | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% endcapture %}
+{% capture format %}{{ talk.format | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% endcapture %}
+{% capture language %}{{ talk.language | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% endcapture %}
+{% comment %}A title already ending in . ? or ! gets no extra full stop.{% endcomment %}
 {% assign title_end = talk.title | strip | slice: -1 %}
+{% assign title_stops = false %}
+{% if title_end == "." or title_end == "?" or title_end == "!" %}{% assign title_stops = true %}{% endif %}
 <div class="pub-entry">
   {% if date != "" %}<span class="year-badge">{{ date | split: " " | last }}</span>{% endif %}
-  {% capture line %}<strong>{{ title }}</strong>{% if talk.format %} – {{ talk.format }}{% endif %}{% if details != "" %}{% if talk.format or title_end != "." %}.{% endif %} {{ details }}{% endif %}{% if talk.language %}. Language: {{ talk.language }}{% endif %}{% endcapture %}
-  {% assign last_char = line | slice: -1 %}
-  <div class="text-justify">{{ line }}{% unless last_char == "." %}.{% endunless %}</div>
+  {% capture line %}<strong>{{ title }}</strong>{% if format != "" %} – {{ format }}{% endif %}{% if details != "" %}{% if format != "" or title_stops == false %}.{% endif %} {{ details }}{% endif %}{% if language != "" %}. Language: {{ language }}{% endif %}{% endcapture %}
+  {% assign last_char = line | strip_html | strip | slice: -1 %}
+  <div class="text-justify">{{ line }}{% unless last_char == "." or last_char == "?" or last_char == "!" %}.{% endunless %}</div>
   {% if talk.description %}<div class="text-justify">{{ talk.description | markdownify }}</div>{% endif %}
   {% if talk.url or talk.slides or talk.video %}
   <div class="pub-actions">

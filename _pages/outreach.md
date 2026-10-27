@@ -2,6 +2,7 @@
 title: "Outreach"
 layout: page
 permalink: /outreach/
+math: true
 ---
 
 # Outreach
