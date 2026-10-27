@@ -1,21 +1,25 @@
 # Software projects, shown on the Software page in the order listed.
 # Each entry needs: name, description
 # Optional: authors, website, repo, docs, paper
-
-- name: Path Integral Monte Carlo
-  authors: R. P. Feynman, A. Hibbs
-  website: https://example.com
-  repo: https://github.com
+- name: Phentax
+  authors: A. Santini, D. Bandopadhyay
+  website: https://github.com/asantini29/phentax
+  docs: https://asantini29.github.io/phentax/
+  paper: In preparation
   description: >-
-    A Monte Carlo simulation code for computing quantum mechanical path integrals
-    in many-body systems. Used to study the lambda transition in liquid helium
-    and other quantum statistical mechanics problems.
+    A JAX implementation of the IMRPhenomTHM waveform model, designed for efficient analysis of gravitational wave signals from binary black hole mergers. It natively supports GPU acceleration, automatic differentiation, and vectorization, making it suitable for high-performance computing applications in gravitational wave astronomy.
 
-- name: QED Diagram Calculator
-  authors: R. P. Feynman
-  website: https://example.com
-  docs: https://example.com/docs
+- name: Cantuccio
+  authors: A. Santini
+  website: https://github.com/asantini29/cantuccio
+  docs: https://asantini29.github.io/cantuccio/
   description: >-
-    A tool for systematically enumerating and evaluating Feynman diagrams in
-    quantum electrodynamics calculations, automating the computation of
-    scattering amplitudes to arbitrary order in perturbation theory.
+    A Python package for beautiful corner and violin plots, with a focus on publication-ready figures. Its interface is highly customizable, and it is designed to handle the scaling of labels, legends and ticks with the number of parameters, making it suitable for high-dimensional data visualization.
+
+- name: CudAkima
+  authors: A. Santini 
+  website: https://github.com/asantini29/CudAkima
+  docs: https://asantini29.github.io/CudAkima/index.html
+  paper: Included in https://journals.aps.org/prd/abstract/10.1103/csx9-9trp.
+  description: >-
+    A tool for parallel Akima splines interpolation on GPUs, implemented in numba/cuda. It is designed to efficiently handle batched interpolation tasks with different input sizes, making it suitable for applications in scientific computing and data analysis.
