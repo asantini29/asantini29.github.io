@@ -1,3 +1,39 @@
+# Where this site's content comes from
+
+Talks, outreach, education, publications and the accent color are not edited
+here: they come from the [myCV](https://github.com/asantini29/myCV) repository,
+so the CV and the website never drift apart.
+
+| Site | Source |
+|------|--------|
+| Talks page | `myCV/data/talks.yml` |
+| Outreach page | `myCV/data/outreach.yml` |
+| Education (About page, home sidebar) | `myCV/data/education.yml` |
+| Publications | INSPIRE (`author:Alessandro.Santini.2`), plus `myCV/data/papers.yml` for featured papers and code/slides links |
+| Accent color | `\mycolor` in `myCV/personalinfo.tex` |
+| CV button | the PDF myCV publishes at https://asantini29.github.io/myCV/resume_cv.pdf |
+
+`scripts/sync_cv.py` copies these into `_data/`, `assets/ref.bib` and
+`_config_cv.yml` (all gitignored). The deploy workflow runs it before every
+build: on push to `source`, on demand ("Run workflow"), and nightly, so a change
+pushed to myCV or a new paper on INSPIRE shows up by the next morning. If the
+sync fails, the deploy stops and the live site stays as it was.
+
+GitHub turns off scheduled workflows in a repository with no commits for 60
+days; it emails a warning first, and re-enabling is one click in the Actions tab.
+
+To preview locally (with myCV checked out next to this repository):
+
+```
+python3 -m pip install --user pyyaml        # once
+python3 scripts/sync_cv.py                  # reads ../myCV
+bundle exec jekyll serve --config _config.yml,_config_cv.yml
+```
+
+The rest of this README is the template's own documentation.
+
+---
+
 # A website template for academics
 
 <p align="center">

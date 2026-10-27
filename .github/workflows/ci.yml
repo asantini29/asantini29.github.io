@@ -23,6 +23,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Check out CV data
+        uses: actions/checkout@v7
+        with:
+          repository: asantini29/myCV
+          path: _cv
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # Content comes from myCV (talks, outreach, education, publications, color)
+      - name: Sync content from CV
+        run: |
+          pip install pyyaml
+          python scripts/sync_cv.py --cv _cv
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -30,7 +47,7 @@ jobs:
           bundler-cache: true
 
       - name: Build site
-        run: bundle exec jekyll build --strict_front_matter
+        run: bundle exec jekyll build --strict_front_matter --config _config.yml,_config_cv.yml
         env:
           JEKYLL_ENV: production
 
