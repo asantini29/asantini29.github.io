@@ -17,12 +17,13 @@ links:
   orcid: "https://orcid.org/0000-0001-6936-8581"
   twitter: ""
   linkedin: ""
-  cv: "papers/cv.pdf"
+  cv: "https://asantini29.github.io/myCV/resume_cv.pdf"  # built and published by the myCV repository
 
 # ============================================================
 # STEP 3: Site Settings
 # ============================================================
 accent_color: "#1a7a6d"      # theme color; light and dark variants are derived automatically
+                             # Fallback only: _config_cv.yml, generated from \mycolor in myCV, overrides it
 dark_mode: true              # set to false to disable dark mode entirely
 math: false                  # true loads MathJax on every page; or add `math: true` to individual pages
 description: "Academic webpage of Alessandro Santini"
@@ -50,6 +51,7 @@ nav_pages:
   - name: about
   - name: publications
   - name: talks
+  - name: outreach
   - name: research
   - name: software
   # - name: team
@@ -63,7 +65,7 @@ nav_pages:
 # appears in the rendered list ("Last, F. M."); list the longest form first.
 scholar:
   last_name: Santini
-  first_name: ["Alessandro"]
+  first_name: ["A."]
   style: citesty
   locale: en
   source: /assets/

@@ -21,6 +21,19 @@
 {% endif %}
 
 {% comment %}
+  INSPIRE shortens long author lists to "First Author and others". Show that
+  as "et al.", and name the site owner when they are not among the listed authors.
+{% endcomment %}
+{% if ref contains ", &amp; others." %}
+  {% if bolded %}
+    {% assign ref = ref | replace: ", &amp; others.", " et al." %}
+  {% else %}
+    {% capture including %} et al., including <b>{{ site.scholar.last_name }}, {{ site.scholar.first_name[0] }}</b>{% endcapture %}
+    {% assign ref = ref | replace: ", &amp; others.", including %}
+  {% endif %}
+{% endif %}
+
+{% comment %}
   Links come from BibTeX fields:
     file     PDF in papers/          arxiv   arXiv identifier
     doi      DOI                     url     any web page

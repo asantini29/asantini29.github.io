@@ -1,0 +1,23 @@
+{% comment %}
+  Degrees from myCV's data/education.yml (copied into _data/ by
+  scripts/sync_cv.py), skipping `website: false`. short=true is the sidebar's
+  compact list and uses each degree's `short` text when it has one.
+{% endcomment %}
+{% assign degrees = site.data.education.degrees | where_exp: "d", "d.website != false" %}
+{% if degrees.size > 0 %}
+{% if include.short %}
+<ul style="text-align: left; margin-top: var(--space-4); list-style: none; padding-left: 0;">
+{% for d in degrees %}
+{% capture text %}({{ d.dates }}) {% if d.short %}{{ d.short }}{% else %}{{ d.degree }}, {{ d.institution }}{% endif %}{% endcapture %}
+<li style="font-size: 0.875rem; color: var(--text-secondary); padding: var(--space-1) 0;">{{ text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>
+{% endfor %}
+</ul>
+{% else %}
+<ul style="margin-top: var(--space-4);">
+{% for d in degrees %}
+{% capture text %}({{ d.dates }}) {{ d.degree }}, {{ d.institution }}{% endcapture %}
+<li>{{ text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endif %}

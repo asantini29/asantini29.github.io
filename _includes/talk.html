@@ -1,9 +1,22 @@
+{% comment %}
+  One entry from myCV's data/talks.yml or data/outreach.yml (copied into _data/
+  by scripts/sync_cv.py). Text fields are Markdown, with $...$ math and --
+  dashes; the year badge is the last word of `date`.
+{% endcomment %}
 {% assign talk = include.talk %}
+{% capture title %}{{ talk.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% endcapture %}
+{% assign parts = "" | split: "" %}
+{% if talk.event %}{% assign parts = parts | push: talk.event %}{% endif %}
+{% if talk.location %}{% assign parts = parts | push: talk.location %}{% endif %}
+{% if talk.date %}{% assign parts = parts | push: talk.date %}{% endif %}
+{% capture details %}{{ parts | join: ", " | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% endcapture %}
+{% assign title_end = talk.title | strip | slice: -1 %}
 <div class="pub-entry">
-  {% if talk.year %}<span class="year-badge">{{ talk.year }}</span>{% endif %}
-  {% capture line %}<strong>{{ talk.title }}</strong>{% if talk.event %}. {{ talk.event }}{% endif %}{% if talk.location %}, {{ talk.location }}{% endif %}{% if talk.date %}, {{ talk.date }}{% endif %}{% endcapture %}
+  {% if talk.date %}<span class="year-badge">{{ talk.date | split: " " | last }}</span>{% endif %}
+  {% capture line %}<strong>{{ title }}</strong>{% if talk.format %} – {{ talk.format }}{% endif %}{% if details != "" %}{% if talk.format or title_end != "." %}.{% endif %} {{ details }}{% endif %}{% if talk.language %}. Language: {{ talk.language }}{% endif %}{% endcapture %}
   {% assign last_char = line | slice: -1 %}
   <div class="text-justify">{{ line }}{% unless last_char == "." %}.{% endunless %}</div>
+  {% if talk.description %}<div class="text-justify">{{ talk.description | markdownify }}</div>{% endif %}
   {% if talk.url or talk.slides or talk.video %}
   <div class="pub-actions">
     {% if talk.url %}<a href="{{ talk.url }}" target="_blank" class="btn-pill btn-link">Link</a>{% endif %}
