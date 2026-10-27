@@ -5,54 +5,50 @@ permalink: /research/
 ---
 
 # Research
+Feel free to reach out to me to discuss potential collaborations or to ask questions about my work! These are some of the topics I have been working on:
 
 <div class="research-grid">
 
 <div class="research-card">
-<img src="{{ '/images/research/qed.svg' | relative_url }}" class="research-thumb" width="400" height="200" alt="Feynman diagram">
+<img src="{{ '/images/research/globalfit-wheel.png' | relative_url }}" class="research-thumb research-thumb--contain" width="1480" height="1482" alt="Global Fit wheel">
 <div class="research-body">
-<h2 class="research-title">Quantum Electrodynamics</h2>
-<p class="research-desc">Development of the path integral formulation of quantum mechanics and its application to quantum electrodynamics (QED). This work introduced Feynman diagrams as a powerful tool for calculating particle interactions, providing an intuitive visual representation of complex quantum processes.</p>
+<h2 class="research-title">LISA Global Fit</h2>
+<p class="research-desc">End-to-end data analysis pipeline for the upcoming LISA mission. The global fit algorithm is designed to simultaneously infer the number of sources present in the data and their parameters. Given the large number of expected sources, this is an extremely challenging problem: the dimensionality of the parameter space is expected to include around 100000 parameters!</p>
 </div>
 </div>
 
 <div class="research-card">
-<img src="{{ '/images/research/superfluidity.svg' | relative_url }}" class="research-thumb" width="400" height="200" alt="Superfluid helium">
+<img src="{{ '/images/research/emri.gif' | relative_url }}" class="research-thumb research-thumb--contain" width="1137" height="988" alt="emri">
 <div class="research-body">
-<h2 class="research-title">Superfluidity</h2>
-<p class="research-desc">Quantum mechanical explanation of the behavior of liquid helium near absolute zero. Using path integral methods, we developed a microscopic theory of the lambda transition and explained the energy spectrum of excitations in superfluid helium, including the roton minimum.</p>
+<h2 class="research-title">Extreme mass ratio inspirals</h2>
+<p class="research-desc">Extreme mass ratio inspirals (EMRIs) represent exciting opportunities for testing general relativity in the strong-field regime and strophysical environmental effects. They are among the most exciting sources for LISA, remaining in band for up to several years. For the same reason, they are also among the most challenging to analyze.</p>
 </div>
 </div>
 
 <div class="research-card">
-<img src="{{ '/images/research/partons.svg' | relative_url }}" class="research-thumb" width="400" height="200" alt="Parton model">
+<img src="{{ '/images/research/gbforeground.png' | relative_url }}" class="research-thumb research-thumb--contain" width="300" height="250" alt="GB foreground">
 <div class="research-body">
-<h2 class="research-title">Parton Model</h2>
-<p class="research-desc">A model describing the internal structure of hadrons in terms of point-like constituents called partons. This framework proved essential for interpreting deep inelastic scattering experiments at SLAC and laid the groundwork for quantum chromodynamics (QCD).</p>
+<h2 class="research-title">Galactic Foreground</h2>
+<p class="research-desc">Out of the tens of millions of compact binary systems in our galaxy, only a small fraction will be loud enough to be detectable by LISA. The rest will contribute to a confusing background (or foreground) in the data. It will be crucial to model it and its evolution over time.
+Image from <a href="https://arxiv.org/pdf/2602.18560">our paper</a>.</p>
 </div>
 </div>
 
 <div class="research-card">
-<img src="{{ '/images/research/quantum-computing.svg' | relative_url }}" class="research-thumb" width="400" height="200" alt="Quantum circuit">
+<img src="{{ '/images/research/lisapsd.png' | relative_url }}" class="research-thumb research-thumb--contain" width="3000" height="2250" alt="LISA PSD">
 <div class="research-body">
-<h2 class="research-title">Quantum Computing</h2>
-<p class="research-desc">Pioneering proposals for using quantum mechanical systems to perform computation. We demonstrated that classical computers cannot efficiently simulate quantum physics, motivating the development of quantum computers that exploit superposition and entanglement.</p>
+<h2 class="research-title">Noise (mis)modelling</h2>
+<p class="research-desc">Investigating flexible models for noise and stochastic gravitational wave background (SGWB) reconstruction in LISA data. Analysis of the impact of flexible models on the recovery of a simulated SGWB in LISA noisy data.
+Image from <a href="https://arxiv.org/pdf/2507.06300">our paper</a>.</p>
 </div>
 </div>
 
 <div class="research-card">
-<img src="{{ '/images/research/nanotechnology.svg' | relative_url }}" class="research-thumb" width="400" height="200" alt="Atomic manipulation">
+<img src="{{ '/images/research/emriwaveform.png' | relative_url }}" class="research-thumb research-thumb--contain" width="3000" height="2250" alt="waveforms">
 <div class="research-body">
-<h2 class="research-title">Nanotechnology</h2>
-<p class="research-desc">Exploration of the physical possibilities of manipulating matter at the atomic scale. The talk "There's Plenty of Room at the Bottom" envisioned machines that could arrange atoms one by one, anticipating modern nanotechnology and molecular manufacturing.</p>
-</div>
-</div>
-
-<div class="research-card">
-<img src="{{ '/images/research/weak-interactions.svg' | relative_url }}" class="research-thumb" width="400" height="200" alt="Weak interaction diagram">
-<div class="research-body">
-<h2 class="research-title">Weak Interactions</h2>
-<p class="research-desc">Development of the V-A theory of the weak interaction with Murray Gell-Mann. This theory correctly predicted the structure of weak decays and was later incorporated into the electroweak unification by Weinberg, Salam, and Glashow.</p>
+<h2 class="research-title">Fast waveforms</h2>
+<p class="research-desc">Given the large number of expected sources, and the overall complexity of the analysis, it is crucial to develop fast and efficient waveform models for LISA. I have been involved at different stages in the development of such models for EMRIs, MBHs, and galactic binaries.
+Image from <a href="https://arxiv.org/pdf/2506.09470">this FEW paper</a>.</p>
 </div>
 </div>
 

@@ -4,14 +4,17 @@ Pull this site's content from the myCV repository.
 - Talks, outreach and education: copied from myCV/data/ into _data/.
 - Publications: downloaded from INSPIRE into assets/ref.bib, with the
   website-only extras from myCV/data/papers.yml (selected, code, slides, ...).
-- Accent color: read from \\mycolor in myCV/personalinfo.tex into _config_cv.yml.
+- Accent color: read from \\mycolor in myCV/personalinfo.tex into
+  _data/cv_theme.yml (read by _includes/head.html and favicon.svg).
 
-Nothing is written unless every input was read and the download succeeded, so
-a failure leaves the previous outputs (and the live site) as they were.
+Everything lands where Jekyll loads it on its own, so a plain build or serve
+picks it up. Nothing is written unless every input was read and the download
+succeeded, so a failure leaves the previous outputs (and the live site) as
+they were.
 
 Usage:
     python3 scripts/sync_cv.py              # reads ../myCV
-    bundle exec jekyll serve --config _config.yml,_config_cv.yml
+    bundle exec jekyll serve
 """
 import argparse
 import os
@@ -154,7 +157,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         for name, text in data.items()
     }
     outputs[os.path.join("assets", "ref.bib")] = "@comment{%s}\n\n%s" % (GENERATED, bib)
-    outputs["_config_cv.yml"] = '# %s\naccent_color: "%s"\n' % (GENERATED, color)
+    outputs[os.path.join("_data", "cv_theme.yml")] = '# %s\naccent_color: "%s"\n' % (GENERATED, color)
     for relative, text in outputs.items():
         with open(os.path.join(args.site, relative), "w", encoding="utf-8") as f:
             f.write(text)

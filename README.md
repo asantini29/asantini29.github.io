@@ -13,8 +13,9 @@ so the CV and the website never drift apart.
 | Accent color | `\mycolor` in `myCV/personalinfo.tex` |
 | CV button | the PDF myCV publishes at https://asantini29.github.io/myCV/resume_cv.pdf |
 
-`scripts/sync_cv.py` copies these into `_data/`, `assets/ref.bib` and
-`_config_cv.yml` (all gitignored). The deploy workflow runs it before every
+`scripts/sync_cv.py` copies these into `_data/` (the color goes to
+`_data/cv_theme.yml`) and `assets/ref.bib`, all gitignored and all loaded by
+Jekyll on its own. The deploy workflow runs it before every
 build: on push to `source`, on demand ("Run workflow"), and nightly, so a change
 pushed to myCV or a new paper on INSPIRE shows up by the next morning. If the
 sync fails, the deploy stops and the live site stays as it was.
@@ -27,8 +28,11 @@ To preview locally (with myCV checked out next to this repository):
 ```
 python3 -m pip install --user pyyaml        # once
 python3 scripts/sync_cv.py                  # reads ../myCV
-bundle exec jekyll serve --config _config.yml,_config_cv.yml
+bundle exec jekyll serve
 ```
+
+Re-run the sync after editing myCV; a running `jekyll serve` picks the new
+files up by itself.
 
 The rest of this README is the template's own documentation.
 

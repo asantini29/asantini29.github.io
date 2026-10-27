@@ -4,6 +4,9 @@
 
 html {
   scroll-behavior: smooth;
+  // Base size for the whole site. Every font size and spacing step is in rem,
+  // so this scales them together; 100% is the browser default (usually 16px).
+  font-size: 112.5%;
 
   // Custom scrollbar — thin, accent-tinted
   &::-webkit-scrollbar {

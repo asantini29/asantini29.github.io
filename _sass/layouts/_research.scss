@@ -32,6 +32,14 @@
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
+  // For images that aren't 2:1 (square diagrams, plots): show the whole image
+  // inside the 200px strip instead of cropping it. Size it here, not with the
+  // <img> width/height attributes, which CSS always overrides.
+  .research-thumb--contain {
+    object-fit: contain;
+    padding: var(--space-3);
+  }
+
   &:hover .research-thumb {
     transform: scale(1.04);
   }

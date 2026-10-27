@@ -22,7 +22,9 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-  <meta name="theme-color" content="{{ site.accent_color | default: '#1a7a6d' }}">
+  {% comment %}The CV's color (_data/cv_theme.yml, written by scripts/sync_cv.py) wins over _config.yml.{% endcomment %}
+  {% assign accent = site.data.cv_theme.accent_color | default: site.accent_color %}
+  <meta name="theme-color" content="{{ accent | default: '#1a7a6d' }}">
   <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
   <!-- favicon.svg is generated from your initials + accent color (see favicon.svg).
        favicon.ico and apple-touch-icon.png are rasterized from it during deployment
@@ -33,9 +35,9 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.name | escape }}" href="{{ '/feed.xml' | absolute_url }}">
 
   <!-- Accent color from config; light/dark variants are derived in _sass/base/_variables.scss -->
-  {% if site.accent_color %}
+  {% if accent %}
   <style>
-    :root { --accent-base: {{ site.accent_color }}; }
+    :root { --accent-base: {{ accent }}; }
   </style>
   {% endif %}
 

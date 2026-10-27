@@ -8,27 +8,25 @@ permalink: /
 <p class="home-hero-sub">{{ site.title }}, {{ site.institution }}</p>
 
 <div class="chip-container" markdown="0">
-<a href="{{ '/research' | relative_url }}" class="chip">Quantum Electrodynamics</a>
-<a href="{{ '/research' | relative_url }}" class="chip">Path Integrals</a>
-<a href="{{ '/research' | relative_url }}" class="chip">Superfluidity</a>
-<a href="{{ '/research' | relative_url }}" class="chip">Parton Model</a>
-<a href="{{ '/research' | relative_url }}" class="chip">Quantum Computing</a>
-<a href="{{ '/research' | relative_url }}" class="chip">Nanotechnology</a>
+<a href="{{ '/research' | relative_url }}" class="chip">LISA Global Fit</a>
+<a href="{{ '/research' | relative_url }}" class="chip">Extreme mass ratio inspirals</a>
+<a href="{{ '/research' | relative_url }}" class="chip">Galactic Foreground</a>
+<a href="{{ '/research' | relative_url }}" class="chip">Noise (mis)modelling</a>
+<a href="{{ '/research' | relative_url }}" class="chip">Fast waveforms</a>
 </div>
 
-Theoretical physics is a branch of physics that focuses on the development of mathematical models and theories to understand and explain natural phenomena.
-It plays a crucial role in our understanding of the fundamental laws of the universe and the fundamental particles that make up all matter.
-Research in theoretical physics helps us to make predictions about how the universe works and to test these predictions through experiments.
+Welcome to my personal website! I am Alessandro Santini, a PhD candidate at the Max Planck Institute for Gravitational Physics (Albert Einstein Institute), and my work focuses on extracting astrophysical information from gravitational wave data.
 
-<div class="callout callout-success" markdown="0">
-<div class="callout-title">{% include icon.html name="award" class="callout-icon" %} Nobel Prize in Physics, 1965</div>
-<p>Awarded the Nobel Prize jointly with Julian Schwinger and Shin'ichiro Tomonaga for fundamental work in quantum electrodynamics, with deep-ploughing consequences for the physics of elementary particles.</p>
-</div>
+Explore my website to learn more about me and my research, and feel free to reach out for any questions or potential collaborations!
+<p style="margin: var(--space-4) 0 0;"><a href="{{ '/about' | 
+relative_url }}">About me &rarr;</a></p>
 
-<div class="banner-frame" markdown="0">
-<img src="{{ '/images/banner.webp' | relative_url }}" alt="Feynman diagrams" width="1400" height="449" loading="lazy">
-<div class="banner-caption">Examples of Feynman diagrams. Feynman R., <em>The theory of positrons. Phys. Rev.</em> (1949)</div>
-</div>
+<p style="margin: var(--space-4) 0 0;"><a href="{{ '/research' | relative_url }}">About my research &rarr;</a></p>
+
+<!-- <div class="banner-frame" markdown="0">
+<img src="{{ '/images/research/mojito-animation.gif' | relative_url }}" alt="Feynman diagrams" width="1400" height="449" loading="lazy">
+<div class="banner-caption">Time evolution of a LISA-like data stream</div>
+</div> -->
 
 {% capture selected %}{% bibliography --query @*[selected=true] %}{% endcapture %}
 {% if selected contains "pub-entry" %}
@@ -39,10 +37,3 @@ Research in theoretical physics helps us to make predictions about how the unive
 <p style="margin: var(--space-4) 0 0;"><a href="{{ '/publications' | relative_url }}">All publications &rarr;</a></p>
 </div>
 {% endif %}
-
-## About me
-
-I am a physicist working in the field of quantum mechanics and quantum electrodynamics.
-I received my undergraduate degree in physics from the Massachusetts Institute of Technology (MIT) in 1939 and went on to earn my PhD from Princeton University in 1942.
-After completing my doctoral studies, I worked on the Manhattan Project, where I helped develop the first atomic bombs.
-After the war, I returned to academia, holding teaching and research positions at Cornell and now at the California Institute of Technology.

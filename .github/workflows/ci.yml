@@ -47,7 +47,7 @@ jobs:
           bundler-cache: true
 
       - name: Build site
-        run: bundle exec jekyll build --strict_front_matter --config _config.yml,_config_cv.yml
+        run: bundle exec jekyll build --strict_front_matter
         env:
           JEKYLL_ENV: production
 

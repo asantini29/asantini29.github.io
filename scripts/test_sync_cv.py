@@ -180,7 +180,10 @@ class MainTest(unittest.TestCase):
         self.assertTrue((self.site / "_data" / "education.yml").exists())
         ref = (self.site / "assets" / "ref.bib").read_text()
         self.assertIn("selected = {true}", entry(ref, "Santini:2025iuj"))
-        self.assertIn('accent_color: "#0969da"', (self.site / "_config_cv.yml").read_text())
+        self.assertIn(
+            'accent_color: "#0969da"', (self.site / "_data" / "cv_theme.yml").read_text()
+        )
+        self.assertFalse((self.site / "_config_cv.yml").exists())
 
     def test_broken_data_yaml_fails_and_writes_nothing(self):
         self.write_data("outreach.yml", "- title: a: b\n")
@@ -201,7 +204,7 @@ class MainTest(unittest.TestCase):
         self.assertTrue(err)
         self.assertEqual((self.site / "assets" / "ref.bib").read_text(), "OLD")
         self.assertFalse((self.site / "_data" / "talks.yml").exists())
-        self.assertFalse((self.site / "_config_cv.yml").exists())
+        self.assertFalse((self.site / "_data" / "cv_theme.yml").exists())
 
 
 if __name__ == "__main__":
