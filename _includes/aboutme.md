@@ -1,0 +1,6 @@
+## About me
+
+I am a physicist working in the field of gravitational waves data analysis. I received both my bachelor's and master's degrees in Physics and Astrophysics & Space Physics from the University of Milano-Bicocca, Italy. 
+I am currently a PhD student at the Max Planck Institute for Gravitational Physics (Albert Einstein Institute) in Potsdam, Germany, where I work on the development of data analysis methods for the upcoming LISA (Laser Interferometer Space Antenna) mission, which will detect gravitational waves in the millihertz frequency range.
+
+During my PhD, I have tackling different problems in this field, including the development of flexible noise models for LISA, the investigation of the science potential of Extreme Mass Ratio Inspirals (EMRIs), the development of fast and differentiable waveform models for Massive Black Hole Binaries (MBHBs), and, ultimately, the development of the end-to-end data analysis pipeline for LISA, an algorithm that is referred to as the LISA Global Fit.
